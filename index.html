@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locandina con Musica</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white flex items-center justify-center h-full w-full">
+
+    <div id="intro" class="absolute inset-0 bg-black flex flex-col items-center justify-center text-center p-4 transition-opacity duration-700 ease-in-out opacity-100 z-10 cursor-pointer" onclick="startPosterAndMusic()">
+        <h1 class="text-3xl md:text-5xl font-bold mb-8 rounded-lg p-4">
+            Benvenuto a
+        </h1>
+        <img src="./img/etna_pre_invito.png" alt="Anteprima Locandina" class="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-auto object-contain mb-8 rounded-lg image-glow">
+        <h1 class="text-3xl md:text-5xl font-bold mb-8 rounded-lg p-4">
+            Clicca per Entrare
+        </h1>
+        <p id="autoplayWarning" class="mt-4 text-sm text-red-400 hidden">
+            L'audio potrebbe essere bloccato dal browser. Clicca di nuovo per riprovare.
+        </p>
+    </div>
+
+    <div id="locandina" class="absolute inset-0 bg-black flex items-center justify-center p-2 opacity-0 transition-opacity duration-700 ease-in-out">
+        <a href="https://www.google.com/" target="_blank" class="absolute top-4 left-4 z-30 glow-on-hover">
+            <img src="./img/Logo_etna.png" alt="Logo" id="topLeftImage">
+        </a>
+        <a href="https://www.google.com/" target="_blank" class="absolute top-4 right-4 z-30 glow-on-hover">
+            <img src="./img/Logo_etna.png" alt="Logo" id="topBottomImage"> 
+        </a>
+        <div id="mainPosterContainer" class="relative w-full h-full max-w-full max-h-full rounded-lg shadow-2xl flex flex-col items-center justify-center">
+            <img src="./img/etna_pre_invito.png" alt="Anteprima Locandina" id="centerImage" class="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-contain mb-8 rounded-lg image-glow">
+            
+            <a href="https://www.google.com/" target="_blank" class="block glow-on-hover"> 
+                <img src="./img/scritta_sotto.png" alt="Testo in basso" id="SuperBottomImage" class="h-auto object-contain mb-8 rounded-lg">
+            </a>
+
+            <button id="playPauseBtn" class="absolute bottom-[7%] left-1/2 -translate-x-1/2 p-3 sm:p-4 md:p-5 lg:p-6 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50 z-20">
+            </button>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="./musichetta/take_five.mp3" type="audio/mpeg">
+        Il tuo browser non supporta l'audio.
+    </audio>
+
+    <script src="./locandina.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+#mainPosterContainer {
+    background-image: url('./img/invito_sfondo.png');
+    background-size: contain;
+    background-repeat: repeat; 
+    background-position: center;
+    
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+
+#topLeftImage {
+    width: 180px;
+    height: auto;
+}
+
+
+#topBottomImage {
+    width: 180px;
+    height: auto;
+}
+
+
+#centerImage { 
+    width: 100%; 
+    max-width: 600px; 
+    height: auto; 
+    object-fit: contain;
+    margin-bottom: 8px; 
+}
+
+
+
+#SuperBottomImage {
+    width: 70vw;
+    max-width: 6000px; 
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px; 
+}
+
+
+.glow-on-hover img {
+    transition: filter 0.3s ease-in-out; 
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0)); 
+}
+
+
+.glow-on-hover:hover img {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+
+
+@media (max-width: 1024px) {
+    #SuperBottomImage {
+        width: 80vw;
+    }
+    #topLeftImage, #topBottomImage {
+        width: 120px;
+    }
+    #centerImage {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    #SuperBottomImage {
+        width: 90vw;
+    }
+    #topLeftImage {
+        width: 60px;
+        top: 2%;
+        left: 2%;
+    }
+    #topBottomImage {
+        width: 60px;
+        top: 2%;
+        right: 2%;
+    }
+    #centerImage {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    #SuperBottomImage {
+        width: 95vw;
+    }
+    #topLeftImage, #topBottomImage {
+        width: 50px;
+    }
+    #centerImage {
+        max-width: 150px;
+    }
+}
+
+
+
+@keyframes pulse-glow {
+    0% {
+        filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+    }
+    50% {
+        filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.863));
+    }
+    100% {
+        filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+    }
+}
+
+
+.image-glow {
+    animation: pulse-glow 2s infinite alternate ease-in-out;
+}
