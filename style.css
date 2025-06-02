@@ -26,8 +26,8 @@ html, body {
 }
 
 #topBottomImage {
-    width: 180px;
-    height: auto;
+    width: 30px;
+    height: 166px;
 }
 
 /* Stili per l'immagine centrale (etna_pre_invito.png) */
@@ -65,7 +65,7 @@ html, body {
         width: 85vw; /* Aumenta un po' su schermi medi */
         margin-bottom: 15px; /* Riduci un po' il margine */
     }
-    #topLeftImage, #topBottomImage {
+    #topLeftImage {
         width: 120px;
     }
     #centerImage {
@@ -84,11 +84,7 @@ html, body {
         top: 2%;
         left: 2%;
     }
-    #topBottomImage {
-        width: 80px; /* Aumenta un po' rispetto a 60px per maggiore visibilità */
-        top: 2%;
-        right: 2%;
-    }
+  
     #centerImage {
         max-width: 280px; /* Aumenta la dimensione per renderla più visibile */
         margin-bottom: 5px; /* Riduci il margine per ottimizzare lo spazio */
@@ -101,7 +97,7 @@ html, body {
         width: 95vw; /* Quasi a piena larghezza per essere leggibile */
         margin-bottom: 5px; /* Margine minimo */
     }
-    #topLeftImage, #topBottomImage {
+    #topLeftImage {
         width: 65px; /* Leggermente più grandi per una migliore usabilità del link */
     }
     #centerImage {
