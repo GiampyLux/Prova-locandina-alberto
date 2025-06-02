@@ -1,133 +1,138 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    overflow: hidden;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
 
 #mainPosterContainer {
-    background-image: url('./img/invito_sfondo.png');
-    background-size: cover;
-    background-repeat: no-repeat; /* Corretto a no-repeat, era repeat nell'originale, è meglio no-repeat per sfondi */
-    background-position: center;
-    
-    width: 100%;
-    height: 100%;
-    max-width: 100vw;
-    max-height: 100vh;
+  background-image: url("./img/invito_sfondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
-/* Stili per le immagini in alto (Logo_etna.png) */
 #topLeftImage {
-    width: 180px;
-    height: auto;
+  width: 180px;
+  height: auto;
 }
 
 #topBottomImage {
-    width: 30px;
-    height: 166px;
+  height: 25vh;
+  width: auto;
+  max-height: 200px;
+  top: 5vh;
+  right: calc(-0.5 * 25vh);
 }
 
-/* Stili per l'immagine centrale (etna_pre_invito.png) */
 #centerImage {
-    width: 100%; 
-    max-width: 600px; /* Max width su desktop */
-    height: auto; 
-    object-fit: contain;
-    margin-bottom: 8px; 
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
 }
 
-/* Stili per l'immagine "scritta_sotto.png" */
 #SuperBottomImage {
-    width: 70vw; /* Iniziale su desktop */
-    max-width: 6000px; /* Un valore molto alto per non limitarla in verticale su schermi grandi */
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 20px; 
+  width: 70vw;
+  max-width: 6000px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
-/* Base style for glow on hover: ensures smooth transition */
 .glow-on-hover img {
-    transition: filter 0.3s ease-in-out; 
-    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0)); 
+  transition: filter 0.3s ease-in-out;
+  filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
 }
 
-/* Glow effect on hover for images within .glow-on-hover */
 .glow-on-hover:hover img {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
 }
 
-/* Media query per schermi più piccoli (es. tablet in orizzontale o smartphone grandi) */
 @media (max-width: 1024px) {
-    #SuperBottomImage {
-        width: 85vw; /* Aumenta un po' su schermi medi */
-        margin-bottom: 15px; /* Riduci un po' il margine */
-    }
-    #topLeftImage {
-        width: 120px;
-    }
-    #centerImage {
-        max-width: 300px; /* Aumenta leggermente per visibilità */
-    }
+  #SuperBottomImage {
+    width: 85vw;
+    margin-bottom: 15px;
+  }
+  #topLeftImage {
+    width: 120px;
+  }
+  #topBottomImage {
+    height: 20vh;
+    top: 4vh;
+    right: calc(-0.5 * 20vh);
+  }
+  #centerImage {
+    max-width: 300px;
+  }
 }
 
-/* Media query per schermi tablet verticali o smartphone grandi in orizzontale */
 @media (max-width: 768px) {
-    #SuperBottomImage {
-        width: 90vw; /* Ancora più grande per schermi più stretti */
-        margin-bottom: 10px;
-    }
-    #topLeftImage {
-        width: 80px; /* Aumenta un po' rispetto a 60px per maggiore visibilità */
-        top: 2%;
-        left: 2%;
-    }
-  
-    #centerImage {
-        max-width: 280px; /* Aumenta la dimensione per renderla più visibile */
-        margin-bottom: 5px; /* Riduci il margine per ottimizzare lo spazio */
-    }
+  #SuperBottomImage {
+    width: 90vw;
+    margin-bottom: 10px;
+  }
+  #topLeftImage {
+    width: 80px;
+    top: 2%;
+    left: 2%;
+  }
+  #topBottomImage {
+    height: 15vh;
+    top: 3vh;
+    right: calc(-0.5 * 15vh);
+  }
+  #centerImage {
+    max-width: 280px;
+    margin-bottom: 5px;
+  }
 }
 
-/* Media query per smartphone (schermi più piccoli) */
 @media (max-width: 480px) {
-    #SuperBottomImage {
-        width: 95vw; /* Quasi a piena larghezza per essere leggibile */
-        margin-bottom: 5px; /* Margine minimo */
-    }
-    #topLeftImage {
-        width: 65px; /* Leggermente più grandi per una migliore usabilità del link */
-    }
-    #centerImage {
-        max-width: 250px; /* Assicurati che sia ben visibile su schermi piccoli */
-        margin-bottom: 2px; /* Margine molto ridotto */
-    }
-    /* Potresti voler rimpicciolire un po' i titoli dell'intro se diventano troppo grandi */
-    #intro h1 {
-        font-size: 2.25rem; /* text-4xl o meno */
-    }
-    #intro img {
-        max-width: 90vw; /* Assicurati che l'immagine dell'intro non sia troppo grande */
-    }
+  #SuperBottomImage {
+    width: 95vw;
+    margin-bottom: 5px;
+  }
+  #topLeftImage {
+    width: 65px;
+  }
+  #topBottomImage {
+    height: 12vh;
+    top: 2vh;
+    right: calc(-0.5 * 12vh);
+  }
+  #centerImage {
+    max-width: 250px;
+    margin-bottom: 2px;
+  }
+  #intro h1 {
+    font-size: 2.25rem;
+  }
+  #intro img {
+    max-width: 90vw;
+  }
 }
 
-
-/* Definizione dell'animazione per il glow (per l'intro image) */
 @keyframes pulse-glow {
-    0% {
-        filter: drop-shadow(0 0 20px rgb(255, 255, 255));
-    }
-    50% {
-        filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.863));
-    }
-    100% {
-        filter: drop-shadow(0 0 20px rgb(255, 255, 255));
-    }
+  0% {
+    filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.863));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+  }
 }
 
-/* Stile per l'effetto glow sull'immagine con animazione */
 .image-glow {
-    animation: pulse-glow 2s infinite alternate ease-in-out;
+  animation: pulse-glow 2s infinite alternate ease-in-out;
 }
